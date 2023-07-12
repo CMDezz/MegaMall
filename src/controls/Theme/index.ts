@@ -53,7 +53,7 @@ export const Color = {
   Green: [
     '#5CC936', // xanh
     '#8FD975', // xanh nhạt nhẹ
-    '#EEFAF6', // xanh nhạt
+    '#E4F3EA', // xanh nhạt
   ],
   EarthGreen: [
     '#3A9B7A', //xanh đất

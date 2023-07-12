@@ -1,6 +1,5 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import HomeScreen from '@screens/HomeScreen';
 import {
   CartIcon,
   HeartIcon,
@@ -10,6 +9,7 @@ import {
 import WishlistScreen from '@screens/WishlistScreen';
 import UserScreen from '@screens/UserScreen';
 import OrderScreen from '@screens/OrderScreen';
+import HomeStacks from '@controls/Stacks/HomeStacks';
 
 const Tab = createBottomTabNavigator();
 
@@ -18,7 +18,7 @@ const BottomTabs = (): JSX.Element => {
     <Tab.Navigator>
       <Tab.Screen
         name="HOME"
-        component={HomeScreen}
+        component={HomeStacks}
         options={{
           tabBarShowLabel: false,
           tabBarIcon: HomeIcon,
