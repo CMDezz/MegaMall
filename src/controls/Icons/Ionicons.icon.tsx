@@ -91,3 +91,75 @@ export const SearchIcon = ({
     size={size}
   />
 );
+
+export const FoodIcon = ({
+  focused = false,
+  size = Layout.Icon.Size,
+  color = Color.Neutral[0],
+}: IoniconsState) => (
+  <Ionicons
+    name="fast-food-outline"
+    color={focused ? '#3669C9' : color}
+    size={size}
+  />
+);
+
+export const GiftIcon = ({
+  focused = false,
+  size = Layout.Icon.Size,
+  color = Color.Neutral[0],
+}: IoniconsState) => (
+  <Ionicons
+    name="gift-outline"
+    color={focused ? '#3669C9' : color}
+    size={size}
+  />
+);
+
+export const ShirtIcon = ({
+  focused = false,
+  size = Layout.Icon.Size,
+  color = Color.Neutral[0],
+}: IoniconsState) => (
+  <Ionicons
+    name="shirt-outline"
+    color={focused ? '#3669C9' : color}
+    size={size}
+  />
+);
+
+export const PriceTagsIcon = ({
+  focused = false,
+  size = Layout.Icon.Size,
+  color = Color.Neutral[0],
+}: IoniconsState) => (
+  <Ionicons
+    name="pricetags-outline"
+    color={focused ? '#3669C9' : color}
+    size={size}
+  />
+);
+
+export const DesktopIcon = ({
+  focused = false,
+  size = Layout.Icon.Size,
+  color = Color.Neutral[0],
+}: IoniconsState) => (
+  <Ionicons
+    name="desktop-outline"
+    color={focused ? '#3669C9' : color}
+    size={size}
+  />
+);
+
+export const CloseIcon = ({
+  focused = false,
+  size = Layout.Icon.Size,
+  color = Color.Neutral[0],
+}: IoniconsState) => (
+  <Ionicons
+    name="close-outline"
+    color={focused ? '#3669C9' : color}
+    size={size}
+  />
+);

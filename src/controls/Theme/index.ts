@@ -22,7 +22,7 @@ export const Layout = {
     md: 15,
     lg: 20,
     xl: 24,
-    xxl: 30,
+    xxl: 32,
   },
   Text: {
     Size: {
@@ -49,6 +49,7 @@ export const Color = {
   Primary: [
     '#FFC120', //màu chính, cam vàng
     '#FFD872', //màu chính, cam vàng nhạt
+    '#FFF6E4', //màu chính, cam vàng nhạt hơn
   ],
   Green: [
     '#5CC936', // xanh

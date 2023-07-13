@@ -42,8 +42,8 @@ const HeroBanner = (): JSX.Element => {
         layout={'default'}
         ref={ref}
         data={exampleItems}
-        sliderWidth={Layout.Window.width}
-        itemWidth={315} // = width of img
+        sliderWidth={Layout.Screen.width}
+        itemWidth={Layout.Screen.width} // = width of img
         renderItem={renderItem}
         onSnapToItem={(index: number) => setActiveIndex(index)}
       />
