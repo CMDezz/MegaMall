@@ -6,6 +6,7 @@ import Carousel from 'react-native-snap-carousel';
 import Banner_1 from '@utils/img/Banner_1.png';
 import Banner_2 from '@utils/img/Banner_2.png';
 import {Layout} from '@controls/Theme';
+import {useDimensions} from '@controls/Hooks/useDimensions';
 // import Banner from '../../utils/img/'
 interface ItemProps {
   title: string;
@@ -17,7 +18,7 @@ interface RenderItemProps {
 }
 const HeroBanner = (): JSX.Element => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
-
+  const Layout = useDimensions();
   const ref = useRef(null);
   const exampleItems = [
     {
@@ -43,7 +44,7 @@ const HeroBanner = (): JSX.Element => {
         ref={ref}
         data={exampleItems}
         sliderWidth={Layout.Screen.width}
-        itemWidth={Layout.Screen.width} // = width of img
+        itemWidth={325} // = width of img
         renderItem={renderItem}
         onSnapToItem={(index: number) => setActiveIndex(index)}
       />

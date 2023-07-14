@@ -47,7 +47,7 @@ const InputContainer = (props: InputContainerProps): JSX.Element => {
       )}
       <MaskedTextInput
         {...otherProps}
-        placeholderTextColor={Color.Neutral[1]}
+        placeholderTextColor={Color.Neutral[2]}
         style={[styles.defaultInputStyle, inputStyle] as TextStyle}
       />
       {iconPosition === 'right' && icon && (

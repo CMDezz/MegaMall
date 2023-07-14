@@ -27,6 +27,7 @@ export const Layout = {
   Text: {
     Size: {
       md: 14,
+      xs: 10,
       sm: 12,
       lg: 16,
       xl: 20,
@@ -41,6 +42,8 @@ export const Layout = {
   },
   Icon: {
     Size: 20,
+    SmallSize: 10,
+    MediumSize: 14,
   },
   BorderRadius: 10,
 };

@@ -163,3 +163,22 @@ export const CloseIcon = ({
     size={size}
   />
 );
+
+export const ActionsIcon = ({
+  focused = false,
+  size = Layout.Icon.Size,
+  color = Color.Neutral[0],
+}: IoniconsState) => (
+  <Ionicons
+    name="ellipsis-vertical-outline"
+    color={focused ? '#3669C9' : color}
+    size={size}
+  />
+);
+export const StarIcon = ({
+  focused = false,
+  size = Layout.Icon.Size,
+  color = Color.Neutral[0],
+}: IoniconsState) => (
+  <Ionicons name="star" color={focused ? '#3669C9' : color} size={size} />
+);
