@@ -138,7 +138,7 @@ export const CategoryItem = ({
 
   const onPressItem = () => {
     closeModal && closeModal();
-    return navigation.navigate('ProductByCategoryScreen', {name: item.name});
+    return navigation.navigate('ProductListPage', {name: item.name});
   };
   return (
     <TouchableOpacity style={styles.itemContainer} onPress={onPressItem}>

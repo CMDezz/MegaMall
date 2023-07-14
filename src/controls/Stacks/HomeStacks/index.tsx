@@ -8,12 +8,12 @@ import TopBar from '@components/TopBar';
 import Text from '@components/common/Text';
 import {Color, Layout} from '@controls/Theme';
 import {BackIcon} from '@controls/Icons/Ionicons.icon';
-import ProductByCategoryScreen from '@screens/ProductByCategoryScreen';
+import ProductListPage from '@screens/ProductListPage';
 
 export type HomeStacksProps = {
   HomeScreen: {};
   NotificationsScreen: {};
-  ProductByCategoryScreen: {name: string};
+  ProductListPage: {name: string};
 };
 
 const Stack = createStackNavigator<HomeStacksProps>();
@@ -61,8 +61,8 @@ const HomeStacks = (): JSX.Element => {
         })}
       />
       <Stack.Screen
-        name="ProductByCategoryScreen"
-        component={ProductByCategoryScreen}
+        name="ProductListPage"
+        component={ProductListPage}
         options={({route}) => ({
           headerTitle: () => (
             <HeaderTitle title={route.params?.name || 'Products'} />

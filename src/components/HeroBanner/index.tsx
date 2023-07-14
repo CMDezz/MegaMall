@@ -1,48 +1,62 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import Text from '@components/common/Text';
 import React, {useRef, useCallback, useState} from 'react';
-import {View, Image, ImageSourcePropType, StyleSheet} from 'react-native';
+import {
+  View,
+  ViewStyle,
+  Image,
+  ImageSourcePropType,
+  StyleSheet,
+  Pressable,
+} from 'react-native';
 import Carousel from 'react-native-snap-carousel';
-import Banner_1 from '@utils/img/Banner_1.png';
-import Banner_2 from '@utils/img/Banner_2.png';
+
 import {Layout} from '@controls/Theme';
 import {useDimensions} from '@controls/Hooks/useDimensions';
+import {HomeStacksProps} from '@controls/Stacks/HomeStacks';
+import {useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
 // import Banner from '../../utils/img/'
-interface ItemProps {
+export interface BannerItemProps {
   title: string;
   img: ImageSourcePropType;
+  stackName?: keyof HomeStacksProps;
+  stackProps?: any;
 }
 interface RenderItemProps {
-  item: ItemProps;
+  item: BannerItemProps;
   index: number;
 }
-const HeroBanner = (): JSX.Element => {
+
+type HeroBannerProps = {
+  data: BannerItemProps[];
+  style?: ViewStyle | ViewStyle[];
+};
+const HeroBanner = ({data, style = {}}: HeroBannerProps): JSX.Element => {
+  const navigation = useNavigation<StackNavigationProp<HomeStacksProps>>();
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const Layout = useDimensions();
   const ref = useRef(null);
-  const exampleItems = [
-    {
-      title: 'Banner 1',
-      img: Banner_1,
-    },
-    {
-      title: 'Banner 2',
-      img: Banner_2,
-    },
-  ];
+
   const renderItem = useCallback(({item}: RenderItemProps) => {
+    const onPressItem = () => {
+      if (item.stackName) {
+        navigation.navigate('ProductListPage', item.stackProps);
+      }
+    };
     return (
-      <View style={styles.itemSliderStyle}>
+      <Pressable style={styles.itemSliderStyle} onPress={onPressItem}>
         <Image source={item.img} />
-      </View>
+      </Pressable>
     );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
-    <View>
+    <View style={style}>
       <Carousel
         layout={'default'}
         ref={ref}
-        data={exampleItems}
+        data={data}
         sliderWidth={Layout.Screen.width}
         itemWidth={325} // = width of img
         renderItem={renderItem}
@@ -55,7 +69,7 @@ const HeroBanner = (): JSX.Element => {
 const styles = StyleSheet.create({
   itemSliderStyle: {
     borderRadius: 5,
-    marginLeft: -20,
+    // marginLeft: -20,
   },
 });
 export default HeroBanner;

@@ -1,13 +1,15 @@
 import React, {useState} from 'react';
-import {View} from 'react-native';
+import {View, ViewStyle} from 'react-native';
 import Input from '@components/common/Input';
 import {SearchIcon} from '@controls/Icons/Ionicons.icon';
-import {Layout} from '@controls/Theme';
 
-const SearchInput = (): JSX.Element => {
+type SearchInputProps = {
+  style?: ViewStyle | ViewStyle[];
+};
+const SearchInput = ({style = {}}: SearchInputProps): JSX.Element => {
   const [keyword, setKeyword] = useState<string>('');
   return (
-    <View style={{padding: Layout.Padding.xl}}>
+    <View style={style}>
       <Input
         placeholder="Search Product Name"
         onChangeText={(masked, unMasked) => setKeyword(unMasked)}

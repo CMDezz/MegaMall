@@ -8,12 +8,12 @@ import Text from '@components/common/Text';
 // type Props = RouteProp<HomeStacksProps, 'ProductByCategoryScreen'>;
 
 // const ProductByCategoryScreen = ({route, navigate}: Props): JSX.Element => {
-const ProductByCategoryScreen = (): JSX.Element => {
+const ProductListPage = (): JSX.Element => {
   return (
     <View>
-      <Text> This is Product by category page</Text>
+      <Text> This is Product list page</Text>
     </View>
   );
 };
 
-export default ProductByCategoryScreen;
+export default ProductListPage;

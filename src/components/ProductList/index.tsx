@@ -9,7 +9,8 @@ import {StackNavigationProp} from '@react-navigation/stack';
 import {HomeStacksProps} from '@controls/Stacks/HomeStacks';
 type ProductListBannerProps = {
   title: string;
-  stackAllName?: string;
+  stackSeeAllName?: keyof HomeStacksProps;
+  stackSeeAllProps?: any;
   data: ProductItemsProps[];
   showSeeAll?: boolean;
   wrapMode?: boolean;
@@ -17,7 +18,8 @@ type ProductListBannerProps = {
 
 const ProductListBanner = ({
   title = '',
-  stackAllName = '', //truyền tên stack, sẽ navigate + props name để đổi api
+  stackSeeAllName, //truyền tên stack, sẽ navigate + props name để đổi api
+  stackSeeAllProps = {},
   data,
   showSeeAll = false, // có thể không có see all
   wrapMode = false, //chế độ wrap hoặc chế độ scroll (wrap sẽ tự động điều chỉnh numCol + item width)
@@ -31,7 +33,9 @@ const ProductListBanner = ({
           <Text
             type="link"
             onTextPressed={() => {
-              navigation.navigate('HomeScreen', {name: stackAllName});
+              if (stackSeeAllName) {
+                navigation.navigate(stackSeeAllName, stackSeeAllProps);
+              }
             }}
             color={Color.Blue[0]}>
             See all
@@ -45,7 +49,7 @@ const ProductListBanner = ({
 
 const styles = StyleSheet.create({
   wrapper: {
-    backgroundColor: Color.Neutral[4],
+    // backgroundColor: Color.Neutral[4],
   },
   bannerHeading: {
     padding: Layout.Padding.xl,
